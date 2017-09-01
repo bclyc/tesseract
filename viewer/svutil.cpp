@@ -405,7 +405,7 @@ SVNetwork::SVNetwork(const char* hostname, int port) {
 
   // If server is not there, we will start a new server as local child process.
   if (connect(stream_, addr_info->ai_addr, addr_info->ai_addrlen) < 0) {
-    const char* scrollview_path = getenv("SCROLLVIEW_PATH");
+    const char* scrollview_path = NULL;
     if (scrollview_path == NULL) {
 #ifdef SCROLLVIEW_PATH
 #define _STR(a) #a
@@ -414,7 +414,7 @@ SVNetwork::SVNetwork(const char* hostname, int port) {
 #undef _XSTR
 #undef _STR
 #else
-      scrollview_path = ".";
+      scrollview_path = "/usr/workspace/tesseract/java/";
 #endif
     }
     const char *prog = ScrollViewProg();

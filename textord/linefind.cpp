@@ -40,7 +40,7 @@ namespace tesseract {
 /// Denominator of resolution makes max pixel width to allow thin lines.
 const int kThinLineFraction = 20;
 /// Denominator of resolution makes min pixels to demand line lengths to be.
-const int kMinLineLengthFraction = 4;
+const int kMinLineLengthFraction = 10;
 /// Spacing of cracks across the page to break up tall vertical lines.
 const int kCrackSpacing = 100;
 /// Grid size used by line finder. Not very critical.
@@ -405,7 +405,9 @@ void LineFinder::FindAndRemoveHLines(int resolution,
   if (pix_hline == NULL || *pix_hline == NULL) return;
   C_BLOB_LIST line_cblobs;
   BLOBNBOX_LIST line_bblobs;
-  GetLineBoxes(true, *pix_hline, pix_intersections, &line_cblobs, &line_bblobs);
+
+//BROWN boxes
+//  GetLineBoxes(true, *pix_hline, pix_intersections, &line_cblobs, &line_bblobs);
   int width = pixGetWidth(src_pix);
   int height = pixGetHeight(src_pix);
   ICOORD bleft(0, 0);

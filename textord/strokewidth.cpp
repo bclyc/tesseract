@@ -42,7 +42,7 @@
 namespace tesseract {
 
 INT_VAR(textord_tabfind_show_strokewidths, 0, "Show stroke widths");
-BOOL_VAR(textord_tabfind_only_strokewidths, false, "Only run stroke widths");
+BOOL_VAR(textord_tabfind_only_strokewidths, true, "Only run stroke widths");
 
 /** Allowed proportional change in stroke width to be the same font. */
 const double kStrokeWidthFractionTolerance = 0.125;
@@ -349,6 +349,10 @@ void StrokeWidth::GradeBlobsIntoPartitions(
     Pix* nontext_pix, const DENORM* denorm, bool cjk_script,
     TextlineProjection* projection, BLOBNBOX_LIST* diacritic_blobs,
     ColPartitionGrid* part_grid, ColPartition_LIST* big_parts) {
+
+//  ScrollView* input_blobs_win_ = MakeWindow(0, 0, "Test");
+//  input_block->plot_graded_blobs(input_blobs_win_);
+
   nontext_map_ = nontext_pix;
   projection_ = projection;
   denorm_ = denorm;
@@ -368,24 +372,25 @@ void StrokeWidth::GradeBlobsIntoPartitions(
     projection_->PlotGradedBlobs(&block->blobs, line_blobs_win);
     projection_->PlotGradedBlobs(&block->small_blobs, line_blobs_win);
   }
-  projection_->MoveNonTextlineBlobs(&block->blobs, &block->noise_blobs);
-  projection_->MoveNonTextlineBlobs(&block->small_blobs, &block->noise_blobs);
+//  projection_->MoveNonTextlineBlobs(&block->blobs, &block->noise_blobs);
+//  projection_->MoveNonTextlineBlobs(&block->small_blobs, &block->noise_blobs);
   // Clear and re Insert to take advantage of the removed diacritics.
-  Clear();
-  InsertBlobs(block);
+//  Clear();
+//  InsertBlobs(block);
+
   FCOORD skew;
   FindTextlineFlowDirection(pageseg_mode, true);
   PartitionFindResult r =
-      FindInitialPartitions(pageseg_mode, rerotation, true, block,
+      FindInitialPartitions(pageseg_mode, rerotation, false, block,
                             diacritic_blobs, part_grid, big_parts, &skew);
   if (r == PFR_NOISE) {
-    tprintf("Detected %d diacritics\n", diacritic_blobs->length());
-    // Noise was found, and removed.
-    Clear();
-    InsertBlobs(block);
-    FindTextlineFlowDirection(pageseg_mode, true);
-    r = FindInitialPartitions(pageseg_mode, rerotation, false, block,
-                              diacritic_blobs, part_grid, big_parts, &skew);
+//    // Noise was found, and removed.
+//    tprintf("Detected %d diacritics\n", diacritic_blobs->length());
+//    Clear();
+//    InsertBlobs(block);
+//    FindTextlineFlowDirection(pageseg_mode, true);
+//    r = FindInitialPartitions(pageseg_mode, rerotation, false, block,
+//                              diacritic_blobs, part_grid, big_parts, &skew);
   }
   nontext_map_ = NULL;
   projection_ = NULL;

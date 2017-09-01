@@ -57,14 +57,14 @@ const double kMinGutterWidthGrid = 0.5;
 const double kMaxDistToPartSizeRatio = 1.5;
 
 BOOL_VAR(textord_tabfind_show_initial_partitions,
-         false, "Show partition bounds");
+         true, "Show partition bounds");
 BOOL_VAR(textord_tabfind_show_reject_blobs,
-         false, "Show blobs rejected as noise");
+         true, "Show blobs rejected as noise");
 INT_VAR(textord_tabfind_show_partitions, 0,
         "Show partition bounds, waiting if >1");
-BOOL_VAR(textord_tabfind_show_columns, false, "Show column bounds");
-BOOL_VAR(textord_tabfind_show_blocks, false, "Show final block bounds");
-BOOL_VAR(textord_tabfind_find_tables, true, "run table detection");
+BOOL_VAR(textord_tabfind_show_columns, true, "Show column bounds");
+BOOL_VAR(textord_tabfind_show_blocks, true, "Show final block bounds");
+BOOL_VAR(textord_tabfind_find_tables, false, "run table detection");
 
 ScrollView* ColumnFinder::blocks_win_ = NULL;
 
@@ -152,12 +152,7 @@ void ColumnFinder::SetupAndFilterNoise(PageSegMode pageseg_mode,
   stroke_width_ = new StrokeWidth(gridsize(), bleft(), tright());
   min_gutter_width_ = static_cast<int>(kMinGutterWidthGrid * gridsize());
   input_block->ReSetAndReFilterBlobs();
-  #ifndef GRAPHICS_DISABLED
-  if (textord_tabfind_show_blocks) {
-    input_blobs_win_ = MakeWindow(0, 0, "Filtered Input Blobs");
-    input_block->plot_graded_blobs(input_blobs_win_);
-  }
-  #endif  // GRAPHICS_DISABLED
+
   SetBlockRuleEdges(input_block);
   pixDestroy(&nontext_map_);
   // Run a preliminary strokewidth neighbour detection on the medium blobs.
@@ -168,6 +163,13 @@ void ColumnFinder::SetupAndFilterNoise(PageSegMode pageseg_mode,
                                                    photo_mask_pix, input_block);
   stroke_width_->FindTextlineDirectionAndFixBrokenCJK(pageseg_mode, cjk_script_,
                                                       input_block);
+  #ifndef GRAPHICS_DISABLED
+  if (textord_tabfind_show_blocks) {
+    input_blobs_win_ = MakeWindow(0, 0, "Filtered Input Blobs");
+    input_block->plot_graded_blobs(input_blobs_win_);
+  }
+  #endif  // GRAPHICS_DISABLED
+
   // Clear the strokewidth grid ready for rotation or leader finding.
   stroke_width_->Clear();
 }
@@ -299,20 +301,38 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
   FindInitialTabVectors(NULL, min_gutter_width_, tabfind_aligned_gap_fraction_,
                         input_block);
   SetBlockRuleEdges(input_block);
+
+
+
   stroke_width_->GradeBlobsIntoPartitions(
       pageseg_mode, rerotate_, input_block, nontext_map_, denorm_, cjk_script_,
       &projection_, diacritic_blobs, &part_grid_, &big_parts_);
-  if (!PSM_SPARSE(pageseg_mode)) {
-    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
-                                   input_block, this, pixa_debug, &part_grid_,
-                                   &big_parts_);
-    ImageFind::TransferImagePartsToImageMask(rerotate_, &part_grid_,
-                                             photo_mask_pix);
-    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
-                                   input_block, this, pixa_debug, &part_grid_,
-                                   &big_parts_);
-  }
+
+  ScrollView* part_win0 = MakeWindow(100, 300, "InitialPartitions0");
+    part_grid_.DisplayBoxes(part_win0);
+    DisplayTabVectors(part_win0);
+
+//RED BOXES
+//  if (!PSM_SPARSE(pageseg_mode)) {
+//    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
+//                                   input_block, this, pixa_debug, &part_grid_,
+//                                   &big_parts_);
+//    ImageFind::TransferImagePartsToImageMask(rerotate_, &part_grid_,
+//                                             photo_mask_pix);
+//    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
+//                                   input_block, this, pixa_debug, &part_grid_,
+//                                   &big_parts_);
+//  }
+
+  ScrollView* part_win1 = MakeWindow(100, 300, "InitialPartitions1");
+    part_grid_.DisplayBoxes(part_win1);
+    DisplayTabVectors(part_win1);
+
+
   part_grid_.ReTypeBlobs(&image_bblobs_);
+//  ScrollView* input_blobs_win_ = MakeWindow(0, 0, "Testafter");
+//  input_block->plot_graded_blobs(input_blobs_win_);
+
   TidyBlobs(input_block);
   Reset();
   // TODO(rays) need to properly handle big_parts_.
@@ -351,14 +371,17 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
     part_grid_.ReflectInYAxis();
   }
 
+
+
   if (!PSM_SPARSE(pageseg_mode)) {
     if (!PSM_COL_FIND_ENABLED(pageseg_mode)) {
       // No tab stops needed. Just the grid that FindTabVectors makes.
+
       DontFindTabVectors(&image_bblobs_, input_block, &deskew_, &reskew_);
     } else {
       SetBlockRuleEdges(input_block);
-      // Find the tab stops, estimate skew, and deskew the tabs, blobs and
-      // part_grid_.
+//       Find the tab stops, estimate skew, and deskew the tabs, blobs and
+//       part_grid_.
       FindTabVectors(&horizontal_lines_, &image_bblobs_, input_block,
                      min_gutter_width_, tabfind_aligned_gap_fraction_,
                      &part_grid_, &deskew_, &reskew_);
@@ -377,6 +400,7 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
       part_grid_.DeleteParts();
       return 0;  // This is an empty page.
     }
+
 
     // Refill the grid using rectangular spreading, and get the benefit
     // of the completed tab vectors marking the rule edges of each blob.
@@ -400,6 +424,7 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
     // Insert any unused noise blobs that are close enough to an appropriate
     // partition.
     InsertRemainingNoise(input_block);
+
     // Add horizontal line separators as partitions.
     GridInsertHLinePartitions();
     GridInsertVLinePartitions();
@@ -408,6 +433,7 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
     SetPartitionTypes();
   }
   if (textord_tabfind_show_initial_partitions) {
+    tprintf("Show_initial_partitions!\n");
     ScrollView* part_win = MakeWindow(100, 300, "InitialPartitions");
     part_grid_.DisplayBoxes(part_win);
     DisplayTabVectors(part_win);

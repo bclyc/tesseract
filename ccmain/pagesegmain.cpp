@@ -49,6 +49,7 @@
 #include "textord.h"
 #include "tordmain.h"
 #include "wordseg.h"
+#include "../textord/tablefind.h"
 
 namespace tesseract {
 
@@ -221,10 +222,10 @@ int Tesseract::AutoPageSeg(PageSegMode pageseg_mode, BLOCK_LIST* blocks,
     if (musicmask_pix != NULL) {
       // TODO(rays) pass the musicmask_pix into FindBlocks and mark music
       // blocks separately. For now combine with photomask_pix.
-      pixOr(photomask_pix, photomask_pix, musicmask_pix);
+//      pixOr(photomask_pix, photomask_pix, musicmask_pix);
     }
     if (equ_detect_) {
-      finder->SetEquationDetect(equ_detect_);
+//      finder->SetEquationDetect(equ_detect_);
     }
     result = finder->FindBlocks(pageseg_mode, scaled_color_, scaled_factor_,
                                 to_block, photomask_pix, pix_thresholds_,
@@ -321,7 +322,7 @@ ColumnFinder* Tesseract::SetupPageSegAndDetectOrientation(
     finder->SetupAndFilterNoise(pageseg_mode, *photo_mask_pix, to_block);
 
     if (equ_detect_) {
-      equ_detect_->LabelSpecialText(to_block);
+//      equ_detect_->LabelSpecialText(to_block);
     }
 
     BLOBNBOX_CLIST osd_blobs;
@@ -334,9 +335,9 @@ ColumnFinder* Tesseract::SetupPageSegAndDetectOrientation(
                          pageseg_mode == PSM_SINGLE_BLOCK_VERT_TEXT;
     if (!vertical_text && textord_tabfind_vertical_text &&
         PSM_ORIENTATION_ENABLED(pageseg_mode)) {
-      vertical_text =
-          finder->IsVerticallyAlignedText(textord_tabfind_vertical_text_ratio,
-                                          to_block, &osd_blobs);
+//      vertical_text =
+//          finder->IsVerticallyAlignedText(textord_tabfind_vertical_text_ratio,
+//                                          to_block, &osd_blobs);
     }
     if (PSM_OSD_ENABLED(pageseg_mode) && osd_tess != NULL && osr != NULL) {
       GenericVector<int> osd_scripts;
@@ -391,9 +392,11 @@ ColumnFinder* Tesseract::SetupPageSegAndDetectOrientation(
       }
     }
     osd_blobs.shallow_clear();
-    finder->CorrectOrientation(to_block, vertical_text, osd_orientation);
+//    finder->CorrectOrientation(to_block, vertical_text, osd_orientation);
   }
 
+//    ScrollView* input_blobs_win_ = MakeWindow(0, 0, "Test");
+//    to_block->plot_graded_blobs(input_blobs_win_);
   return finder;
 }
 
