@@ -57,13 +57,16 @@ const double kMinGutterWidthGrid = 0.5;
 const double kMaxDistToPartSizeRatio = 1.5;
 
 BOOL_VAR(textord_tabfind_show_initial_partitions,
-         true, "Show partition bounds");
+         false, "Show partition bounds");
+BOOL_VAR(textord_tabfind_show_other_test_partitions,
+         false, "Show other test partition bounds");
+
 BOOL_VAR(textord_tabfind_show_reject_blobs,
-         true, "Show blobs rejected as noise");
+         false, "Show blobs rejected as noise");
 INT_VAR(textord_tabfind_show_partitions, 0,
         "Show partition bounds, waiting if >1");
-BOOL_VAR(textord_tabfind_show_columns, true, "Show column bounds");
-BOOL_VAR(textord_tabfind_show_blocks, true, "Show final block bounds");
+BOOL_VAR(textord_tabfind_show_columns, false, "Show column bounds");
+BOOL_VAR(textord_tabfind_show_blocks, false, "Show final block bounds");
 BOOL_VAR(textord_tabfind_find_tables, false, "run table detection");
 
 ScrollView* ColumnFinder::blocks_win_ = NULL;
@@ -308,30 +311,34 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
       pageseg_mode, rerotate_, input_block, nontext_map_, denorm_, cjk_script_,
       &projection_, diacritic_blobs, &part_grid_, &big_parts_);
 
-  ScrollView* part_win0 = MakeWindow(100, 300, "InitialPartitions0");
+  if(textord_tabfind_show_other_test_partitions){
+    ScrollView* part_win0 = MakeWindow(100, 300, "InitialPartitions0");
     part_grid_.DisplayBoxes(part_win0);
     DisplayTabVectors(part_win0);
+  }
 
-//RED BOXES
-//  if (!PSM_SPARSE(pageseg_mode)) {
-//    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
-//                                   input_block, this, pixa_debug, &part_grid_,
-//                                   &big_parts_);
-//    ImageFind::TransferImagePartsToImageMask(rerotate_, &part_grid_,
-//                                             photo_mask_pix);
-//    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
-//                                   input_block, this, pixa_debug, &part_grid_,
-//                                   &big_parts_);
-//  }
 
+//RED BOXES ImageMask
+  if (!PSM_SPARSE(pageseg_mode)) {
+    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
+                                   input_block, this, pixa_debug, &part_grid_,
+                                   &big_parts_);
+    ImageFind::TransferImagePartsToImageMask(rerotate_, &part_grid_,
+                                             photo_mask_pix);
+    ImageFind::FindImagePartitions(photo_mask_pix, rotation_, rerotate_,
+                                   input_block, this, pixa_debug, &part_grid_,
+                                   &big_parts_);
+  }
+
+  if(textord_tabfind_show_other_test_partitions){
   ScrollView* part_win1 = MakeWindow(100, 300, "InitialPartitions1");
     part_grid_.DisplayBoxes(part_win1);
     DisplayTabVectors(part_win1);
+  }
 
 
   part_grid_.ReTypeBlobs(&image_bblobs_);
-//  ScrollView* input_blobs_win_ = MakeWindow(0, 0, "Testafter");
-//  input_block->plot_graded_blobs(input_blobs_win_);
+
 
   TidyBlobs(input_block);
   Reset();
@@ -417,17 +424,31 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
     part_grid_.GridFindMargins(best_columns_);
     // Split and merge the partitions by looking at local neighbours.
     GridSplitPartitions();
+
+    if(textord_tabfind_show_other_test_partitions){
+        ScrollView* part_win2 = MakeWindow(100, 300, "InitialPartitions2");
+        part_grid_.DisplayBoxes(part_win2);
+        DisplayTabVectors(part_win2);
+    }
+
     // Resolve unknown partitions by adding to an existing partition, fixing
     // the type, or declaring them noise.
-    part_grid_.GridFindMargins(best_columns_);
-    GridMergePartitions();
+//    part_grid_.GridFindMargins(best_columns_);
+//    GridMergePartitions();
     // Insert any unused noise blobs that are close enough to an appropriate
     // partition.
     InsertRemainingNoise(input_block);
 
+    if(textord_tabfind_show_other_test_partitions){
+        ScrollView* part_win3 = MakeWindow(100, 300, "InitialPartitions3");
+        part_grid_.DisplayBoxes(part_win3);
+        DisplayTabVectors(part_win3);
+    }
+
+
     // Add horizontal line separators as partitions.
     GridInsertHLinePartitions();
-    GridInsertVLinePartitions();
+//    GridInsertVLinePartitions();
     // Recompute margins based on a local neighbourhood search.
     part_grid_.GridFindMargins(best_columns_);
     SetPartitionTypes();
@@ -455,8 +476,18 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
       // Get Table Regions
       table_finder.LocateTables(&part_grid_, best_columns_, WidthCB(), reskew_);
     }
-    GridRemoveUnderlinePartitions();
-    part_grid_.DeleteUnknownParts(input_block);
+
+    if(textord_tabfind_show_other_test_partitions){
+        ScrollView* part_win4 = MakeWindow(100, 300, "InitialPartitions4");
+        part_grid_.DisplayBoxes(part_win4);
+        DisplayTabVectors(part_win4);
+    }
+
+
+    //GridRemoveUnderlinePartitions();
+    //part_grid_.DeleteUnknownParts(input_block);
+
+
 
     // Build the partitions into chains that belong in the same block and
     // refine into one-to-one links, then smooth the types within each chain.
@@ -480,6 +511,10 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
     #endif  // GRAPHICS_DISABLED
     part_grid_.AssertNoDuplicates();
   }
+
+//  ScrollView* input_blobs_win_ = MakeWindow(0, 0, "Testafter");
+//  input_block->plot_graded_blobs(input_blobs_win_);
+
   // Ownership of the ColPartitions moves from part_sets_ to part_grid_ here,
   // and ownership of the BLOBNBOXes moves to the ColPartitions.
   // (They were previously owned by the block or the image_bblobs list.)
@@ -498,7 +533,8 @@ int ColumnFinder::FindBlocks(PageSegMode pageseg_mode, Pix* scaled_color,
   }
 
   DisplayBlocks(blocks);
-  RotateAndReskewBlocks(input_is_rtl, to_blocks);
+  //RotateAndReskewBlocks(input_is_rtl, to_blocks);
+
   int result = 0;
   #ifndef GRAPHICS_DISABLED
   if (blocks_win_ != NULL) {
@@ -1467,6 +1503,8 @@ void ColumnFinder::TransformToBlocks(BLOCK_LIST* blocks,
     }
     if (part->type() == PT_NOISE) {
       noise_it.add_to_end(part);
+      tprintf("Add to noise_it %d, y=%d\n",
+                gsearch.GridY(), gsearch.GridY() * gridsize());
     } else {
       AddToTempPartList(part, &temp_part_list);
     }

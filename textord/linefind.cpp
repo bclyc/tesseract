@@ -40,7 +40,7 @@ namespace tesseract {
 /// Denominator of resolution makes max pixel width to allow thin lines.
 const int kThinLineFraction = 20;
 /// Denominator of resolution makes min pixels to demand line lengths to be.
-const int kMinLineLengthFraction = 10;
+const int kMinLineLengthFraction = 3;
 /// Spacing of cracks across the page to break up tall vertical lines.
 const int kCrackSpacing = 100;
 /// Grid size used by line finder. Not very critical.
@@ -259,9 +259,10 @@ void LineFinder::FindAndRemoveLines(int resolution, bool debug, Pix* pix,
   GetLineMasks(resolution, pix, &pix_vline, &pix_non_vline, &pix_hline,
                &pix_non_hline, &pix_intersections, pix_music_mask,
                pixa_display);
+
   // Find lines, convert to TabVector_LIST and remove those that are used.
-  FindAndRemoveVLines(resolution, pix_intersections, vertical_x, vertical_y,
-                      &pix_vline, pix_non_vline, pix, v_lines);
+//  FindAndRemoveVLines(resolution, pix_intersections, vertical_x, vertical_y,
+//                      &pix_vline, pix_non_vline, pix, v_lines);
   if (pix_hline != NULL) {
     // Recompute intersections and re-filter false positive h-lines.
     if (pix_vline != NULL)

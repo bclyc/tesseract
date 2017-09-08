@@ -231,8 +231,8 @@ int Tesseract::AutoPageSeg(PageSegMode pageseg_mode, BLOCK_LIST* blocks,
                                 to_block, photomask_pix, pix_thresholds_,
                                 pix_grey_, &pixa_debug_, &found_blocks,
                                 diacritic_blobs, to_blocks);
-    if (result >= 0)
-      finder->GetDeskewVectors(&deskew_, &reskew_);
+//    if (result >= 0)
+//      finder->GetDeskewVectors(&deskew_, &reskew_);
     delete finder;
   }
   pixDestroy(&photomask_pix);

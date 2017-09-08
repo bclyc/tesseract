@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44099804-e892-475c-a9d9-9edff345e776" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/baseapi.cpp" afterPath="$PROJECT_DIR$/api/baseapi.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ccmain/pagesegmain.cpp" afterPath="$PROJECT_DIR$/ccmain/pagesegmain.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textord/colfind.cpp" afterPath="$PROJECT_DIR$/textord/colfind.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textord/linefind.cpp" afterPath="$PROJECT_DIR$/textord/linefind.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textord/strokewidth.cpp" afterPath="$PROJECT_DIR$/textord/strokewidth.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewer/svutil.cpp" afterPath="$PROJECT_DIR$/viewer/svutil.cpp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,21 +18,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pagesegmain.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ccmain/pagesegmain.cpp">
+      <file leaf-file-name="baseapi.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/baseapi.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="242" column="28" lean-forward="false" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
+            <state relative-caret-position="45720">
+              <caret line="2286" column="29" lean-forward="false" selection-start-line="2286" selection-start-column="18" selection-end-line="2286" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linefind.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pagesegmain.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ccmain/pagesegmain.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1142">
+              <caret line="333" column="22" lean-forward="false" selection-start-line="333" selection-start-column="9" selection-end-line="333" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linefind.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textord/linefind.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7827">
-              <caret line="408" column="7" lean-forward="false" selection-start-line="408" selection-start-column="7" selection-end-line="408" selection-end-column="7" />
+            <state relative-caret-position="442">
+              <caret line="266" column="68" lean-forward="false" selection-start-line="266" selection-start-column="68" selection-end-line="266" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -41,8 +51,8 @@
       <file leaf-file-name="colfind.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textord/colfind.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5197">
-              <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="419" column="32" lean-forward="true" selection-start-line="419" selection-start-column="32" selection-end-line="419" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -51,8 +61,8 @@
       <file leaf-file-name="strokewidth.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textord/strokewidth.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="387" column="69" lean-forward="false" selection-start-line="387" selection-start-column="69" selection-end-line="387" selection-end-column="69" />
+            <state relative-caret-position="6920">
+              <caret line="346" column="42" lean-forward="false" selection-start-line="346" selection-start-column="18" selection-end-line="346" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -61,8 +71,8 @@
       <file leaf-file-name="colpartitiongrid.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textord/colpartitiongrid.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="220" column="28" lean-forward="false" selection-start-line="220" selection-start-column="22" selection-end-line="220" selection-end-column="28" />
+            <state relative-caret-position="13540">
+              <caret line="677" column="48" lean-forward="false" selection-start-line="677" selection-start-column="23" selection-end-line="677" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -71,28 +81,8 @@
       <file leaf-file-name="bbgrid.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/textord/bbgrid.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="4140">
               <caret line="207" column="14" lean-forward="false" selection-start-line="207" selection-start-column="14" selection-end-line="207" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrollview.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viewer/scrollview.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrollview.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viewer/scrollview.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -122,36 +112,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>R</find>
-      <find>Re</find>
-      <find>ReT</find>
-      <find>ReTy</find>
-      <find>ReType</find>
-      <find>ReTypeBol</find>
-      <find>ReTypeBo</find>
-      <find>ReTypeB</find>
-      <find>ReTypeBl</find>
-      <find>ReTypeBlo</find>
-      <find>ReTypeBlobs</find>
-      <find>retype</find>
-      <find>ReTypeBlob</find>
-      <find>part_grid</find>
-      <find>im_blob_it</find>
-      <find>FindInitialPartitions</find>
-      <find>noise_blobs</find>
-      <find>RemoveUnusedLineSegments</find>
-      <find>textord_tabfind_only_strokewidths</find>
+      <find>to_blocks</find>
+      <find>ExtractPartitionsAsBlocks</find>
+      <find>Red box</find>
+      <find>InitialP</find>
       <find>block</find>
-      <find>nontext_map_</find>
-      <find>diacri</find>
+      <find>Findblocks</find>
+      <find>SetupPageSegAndDetectOrientation</find>
       <find>GradeBlobsIntoPartitions</find>
-      <find>test</find>
-      <find>inters</find>
-      <find>Inter</find>
-      <find>finder</find>
+      <find>h_lines</find>
+      <find>block_list_</find>
+      <find>tessedit_pageseg_mode</find>
+      <find>pageseg_mode</find>
+      <find>blocks</find>
+      <find>horizontal_lines_</find>
       <find>FindAndRemoveLines</find>
-      <find>find_problems</find>
-      <find>part_grid_</find>
+      <find>Partitions</find>
+      <find>https://mail.sohu-inc.com/passwd</find>
+      <find>tesseract_</find>
+      <find>PSM_SPARSE</find>
+      <find>GetIterator</find>
+      <find>AnalyseLayout</find>
+      <find>SegmentPage</find>
+      <find>AutoPageSeg</find>
+      <find>mask</find>
+      <find>textord_tabfind_show_reject_blobs</find>
+      <find>skew</find>
+      <find>vertical</find>
+      <find>v_lines</find>
+      <find>pix_hline</find>
+      <find>CorrectOrientation</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -164,10 +154,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/viewer/svutil.cpp" />
-        <option value="$PROJECT_DIR$/ccmain/pagesegmain.cpp" />
-        <option value="$PROJECT_DIR$/textord/colfind.cpp" />
-        <option value="$PROJECT_DIR$/textord/linefind.cpp" />
         <option value="$PROJECT_DIR$/textord/strokewidth.cpp" />
+        <option value="$PROJECT_DIR$/api/baseapi.cpp" />
+        <option value="$PROJECT_DIR$/textord/colfind.cpp" />
+        <option value="$PROJECT_DIR$/ccmain/pagesegmain.cpp" />
+        <option value="$PROJECT_DIR$/textord/linefind.cpp" />
       </list>
     </option>
   </component>
@@ -192,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,14 +238,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tesseract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tesseract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pyocr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -351,10 +356,9 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.279647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -368,6 +372,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -379,14 +384,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/baseapi.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9800">
-          <caret line="490" column="65" lean-forward="false" selection-start-line="490" selection-start-column="52" selection-end-line="490" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ccmain/pagesegmain.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4260">
@@ -407,7 +404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -415,7 +411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -431,7 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -447,7 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9800">
           <caret line="490" column="65" lean-forward="false" selection-start-line="490" selection-start-column="52" selection-end-line="490" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -463,7 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -471,7 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -527,7 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -543,7 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -559,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -583,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,7 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,7 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,15 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9800">
           <caret line="490" column="65" lean-forward="false" selection-start-line="490" selection-start-column="52" selection-end-line="490" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/baseapi.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45720">
-          <caret line="2286" column="29" lean-forward="false" selection-start-line="2286" selection-start-column="18" selection-end-line="2286" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +707,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/textord/bbgrid.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
+        <state relative-caret-position="4140">
           <caret line="207" column="14" lean-forward="false" selection-start-line="207" selection-start-column="14" selection-end-line="207" selection-end-column="14" />
           <folding />
         </state>
@@ -746,40 +715,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/textord/colpartitiongrid.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="220" column="28" lean-forward="false" selection-start-line="220" selection-start-column="22" selection-end-line="220" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ccmain/pagesegmain.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="242" column="28" lean-forward="false" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
+        <state relative-caret-position="13540">
+          <caret line="677" column="48" lean-forward="false" selection-start-line="677" selection-start-column="23" selection-end-line="677" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/textord/strokewidth.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="387" column="69" lean-forward="false" selection-start-line="387" selection-start-column="69" selection-end-line="387" selection-end-column="69" />
+        <state relative-caret-position="6920">
+          <caret line="346" column="42" lean-forward="false" selection-start-line="346" selection-start-column="18" selection-end-line="346" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/textord/colfind.cpp">
+    <entry file="file://$PROJECT_DIR$/ccstruct/publictypes.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5197">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="791">
+          <caret line="187" column="12" lean-forward="false" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/baseapi.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45720">
+          <caret line="2286" column="29" lean-forward="false" selection-start-line="2286" selection-start-column="18" selection-end-line="2286" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/textord/linefind.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7827">
-          <caret line="408" column="7" lean-forward="false" selection-start-line="408" selection-start-column="7" selection-end-line="408" selection-end-column="7" />
+        <state relative-caret-position="442">
+          <caret line="266" column="68" lean-forward="false" selection-start-line="266" selection-start-column="68" selection-end-line="266" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textord/colfind.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="419" column="32" lean-forward="true" selection-start-line="419" selection-start-column="32" selection-end-line="419" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccmain/pagesegmain.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1142">
+          <caret line="333" column="22" lean-forward="false" selection-start-line="333" selection-start-column="9" selection-end-line="333" selection-end-column="22" />
           <folding />
         </state>
       </provider>
