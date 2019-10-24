@@ -1,2 +1,38 @@
 Dowdload RT_GENE: 
 https://zenodo.org/record/2529036
+
+##############################################
+ICCVW:
+Registration Number
+A10476  
+
+##############################################
+biz Flights:
+
+中国国际航空
+
+CA 125
+ 
+Oct-26(Sat) 13:25 - 北京(PEK) 
+ 
+北京首都机场 / Terminal T3 
+
+Oct-26(Sat) 16:35 - 首尔(ICN) 
+ 
+首尔仁川机场 / Terminal 1 
+ 
+
+ 
+中国国际航空
+
+CA 124
+ 
+Nov-03(Sun) 13:05 - 首尔(ICN) 
+ 
+首尔仁川机场 / Terminal 1 
+
+Nov-03(Sun) 14:20 - 北京(PEK) 
+ 
+北京首都机场 / Terminal T3 
+##############################################
+ 
