@@ -38,3 +38,25 @@ Nov-03(Sun) 14:20 - 北京(PEK)
 北京首都机场 / Terminal T3 
 ##############################################
  
+机场大巴 到COEX
+#6103 (Non-stop)  
+
+
+Bus Stop
+
+Travel Time
+
+Interval
+
+Fare
+
+Destination
+
+Operating Hours
+
+Terminal 1: No.7 (1F) 
+ Terminal 2: No.21 (B1F) Approx. 75 min 10 ~ 25 min KRW 15,000 City Airport 
+ (COEX) Terminal 1: 05:55 ~ 22:30 
+ Terminal 2: 05:35 ~ 23:30 
+
+
