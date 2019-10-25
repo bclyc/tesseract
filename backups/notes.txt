@@ -58,5 +58,15 @@ Terminal 1: No.7 (1F)
  Terminal 2: No.21 (B1F) Approx. 75 min 10 ~ 25 min KRW 15,000 City Airport 
  (COEX) Terminal 1: 05:55 ~ 22:30 
  Terminal 2: 05:35 ~ 23:30 
+##############################################
 
+酒店
+Novotel Ambassador Gangnam
+
+130 Bongeunsa-ro, Yeoksam-dong, Gangnam-gu, Seoul,
+|서울시 강남구 봉은사로 130
+
+新论岘站 신논현역
+奉恩寺站 봉은사역
+##############################################
 
